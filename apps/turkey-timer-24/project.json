@@ -21,6 +21,11 @@
             "glob": "*.pug",
             "input": "apps/turkey-timer-24/src/views",
             "output": "views"
+          },
+          {
+            "glob": "*.css",
+            "input": "apps/turkey-timer-24/src/views",
+            "output": "static"
           }
         ],
         "generatePackageJson": true,
