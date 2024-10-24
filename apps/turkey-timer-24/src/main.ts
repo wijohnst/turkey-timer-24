@@ -1,13 +1,22 @@
 import koa from 'koa';
-import router from './providers/router-provider';
+import views from '@ladjs/koa-views';
+import { router } from './routes';
 
 const host = process.env.HOST ?? 'localhost';
 const port = process.env.PORT ? Number(process.env.PORT) : 3000;
 
 const app = new koa();
 
+const viewsPath = __dirname + '/views';
+const staticPath = `${__dirname}/static`;
+
+const render = views(viewsPath, {
+  autoRender: true,
+  extension: 'pug',
+});
+
+app.use(render);
 app.use(router.routes());
-app.use(router.allowedMethods());
 
 app.listen(port, host, () => {
   console.log(`[ ready ] http://${host}:${port}`);

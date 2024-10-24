@@ -13,10 +13,16 @@
         "platform": "node",
         "outputPath": "dist/apps/turkey-timer-24",
         "format": ["cjs"],
-        "bundle": false,
+        "bundle": true,
         "main": "apps/turkey-timer-24/src/main.ts",
         "tsConfig": "apps/turkey-timer-24/tsconfig.app.json",
-        "assets": ["apps/turkey-timer-24/src/assets"],
+        "assets": [
+          {
+            "glob": "*.pug",
+            "input": "apps/turkey-timer-24/src/views",
+            "output": "views"
+          }
+        ],
         "generatePackageJson": true,
         "esbuildOptions": {
           "sourcemap": true,
