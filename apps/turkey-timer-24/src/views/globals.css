@@ -1,0 +1,162 @@
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+body {
+  /* 3. Add accessible line-height */
+  line-height: 1.5;
+  /* 4. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/*
+9. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+
+  padding: 8px;
+
+  /*DESIGN TOKENS*/
+
+  /*COLORS*/
+
+  /* PRIMITIVES */
+  --tt-purple: #695195;
+  --tt-red: #fb0101;
+  --tt-yellow: #fff000;
+  --tt-black: #000000;
+  --tt-white: #ffffff;
+  --tt-tan: #faf1e1;
+  --tt-light-yellow: #fef882;
+
+  /*LAYOUT SIZES*/
+  --tt-layout-x-small: 0.125rem /* 2px */;
+  --tt-layout-small: 0.25rem /* 4px */;
+  --tt-layout-medium: 0.75rem /* 12px */;
+  --tt-layout-large: 1rem /* 16px */;
+
+  /*TYPOGRAPHY*/
+  --tt-font-size-small: 12px;
+  --tt-font-size-regular: 16px;
+  --tt-font-size-large: 24px;
+  --tt-font-size-x-large: 32px;
+  --tt-font-size-xx-large: 48px;
+  --tt-font-size-xxx-large: 64px;
+
+  --tt-font-face-body: 'Public Sans';
+
+  --tt-font-weight-light: 300;
+  --tt-font-weight-regular: 400;
+  --tt-font-weight-bold: 700;
+  --tt-font-weight-black: 900;
+
+  font-family: var(--tt-font-face-body), sans-serif;
+  font-size: var(--tt-font-size-regular);
+}
+
+body {
+  height: 100%;
+  background-color: var(--tt-black);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: var(--tt-font-weight-bold);
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: var(--tt-font-size-xxx-large);
+}
+
+h2 {
+  font-size: var(--tt-font-size-xx-large);
+}
+
+h3 {
+  font-size: var(--tt-font-size-x-large);
+}
+
+h4 {
+  font-size: var(--tt-font-size-large);
+}
+
+h5 {
+  font-size: var(--tt-font-size-regular);
+}
+
+h6 {
+  font-size: var(--tt-font-size-small);
+}
+
+button.waffle-button{
+    background-color: var(--tt-yellow);
+    border: solid var(--tt-black);
+    cursor: pointer;
+    border-radius: var(--tt-layout-medium);
+}
+/* 
+.hidden{
+    display: 
+} */

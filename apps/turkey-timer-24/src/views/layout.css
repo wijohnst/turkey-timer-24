@@ -1,0 +1,19 @@
+body {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+}
+
+body > div {
+  width: 100%;
+}
+
+#main-content {
+  flex-grow: 1;
+  width: 100%;
+}
+
+#footer {
+  flex-shrink: 0;
+}

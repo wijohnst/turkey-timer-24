@@ -1,0 +1,128 @@
+#hero {
+  padding: 2rem;
+
+  .hero-row {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+  }
+
+  .hero-letter {
+    background-color: var(--tt-yellow);
+
+    width: 6.25rem;
+    height: 6.25rem;
+
+    font-size: var(--tt-font-size-xxx-large);
+    font-weight: var(--tt-font-weight-bold);
+
+    border: solid var(--tt-black) var(--tt-layout-x-small);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .init {
+    filter: brightness(15%);
+  }
+
+.glow:after {
+    content: '';
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    background: inherit;
+    filter: blur(2rem);
+    z-index: -99;
+    border-radius: 20px;
+}
+
+.glow.right:after {
+    top: 0;
+    right: -10px;
+}
+
+.glow.left:after {
+    top: 0;
+    left: -10px;
+}
+
+.glow.top:after {
+    top: -10px;
+    left: 0;
+}
+
+.glow.bottom:after {
+    bottom: -10px;
+    left: 0;
+}
+
+  .flicker {
+    animation: flicker 4s;
+  }
+
+  .delay-animation{
+    animation-delay: 1s;
+  }
+
+  #controls {
+    margin-top: var(--tt-layout-large);
+  }
+
+}
+
+@keyframes flicker {
+  0% {
+    filter: brightness(15%);
+  }
+  1% {
+    filter: brightness(15%);
+  }
+  2% {
+    filter: brightness(15%);
+  }
+  9% {
+    filter: brightness(25%);
+  }
+  10% {
+    filter: brightness(35%);
+  }
+  12% {
+    filter: brightness(5%);
+  }
+  15% {
+    filter: brightness(45%);
+  }
+  16% {
+    filter: brightness(5%);
+  }
+  17% {
+    filter: brightness(75%);
+  }
+  18% {
+    filter: brightness(75%);
+  }
+  19% {
+    filter: brightness(5%);
+  }
+  20% {
+    filter: brightness(75%);
+  }
+  22% {
+    filter: brightness(15%);
+  }
+  24% {
+    filter: brightness(75%);
+  }
+  26% {
+    filter: brightness(15%);
+  }
+  28% {
+    filter: brightness(75%);
+  }
+  100% {
+    filter: brightness(100%);
+  }
+}

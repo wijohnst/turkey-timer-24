@@ -6,6 +6,7 @@
   "tags": [],
   "targets": {
     "build": {
+      "dependsOn": ["package-client-scripts"],
       "executor": "@nx/esbuild:esbuild",
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
@@ -14,16 +15,17 @@
         "outputPath": "dist/apps/turkey-timer-24",
         "format": ["cjs"],
         "bundle": true,
+        "deleteOutputPath": false,
         "main": "apps/turkey-timer-24/src/main.ts",
         "tsConfig": "apps/turkey-timer-24/tsconfig.app.json",
         "assets": [
           {
-            "glob": "*.pug",
+            "glob": "**/*.pug",
             "input": "apps/turkey-timer-24/src/views",
             "output": "views"
           },
           {
-            "glob": "*.css",
+            "glob": "**/*.css",
             "input": "apps/turkey-timer-24/src/views",
             "output": "static"
           }
@@ -48,22 +50,59 @@
         }
       }
     },
+    "package-client-scripts": {
+      "executor": "@nx/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "platform": "node",
+        "outputPath": "dist/apps/turkey-timer-24/static",
+        "format": ["esm"],
+        "generatePackageJson": false,
+        "bundle": true,
+        "tsConfig": "apps/turkey-timer-24/tsconfig.app.json",
+        "main": "apps/turkey-timer-24/src/scripts/index.ts",
+        "additionalEntryPoints": ["apps/turkey-timer-24/src/scripts/*"],
+        "esbuildOptions": {
+          "sourcemap": true,
+          "outExtension": {
+            ".js": ".js"
+          }
+        }
+      },
+      "configurations": {
+        "development": {},
+        "production": {
+          "esbuildOptions": {
+            "sourcemap": false,
+            "outExtension": {
+              ".js": ".js"
+            }
+          }
+        }
+      }
+    },
     "serve": {
       "executor": "@nx/js:node",
       "defaultConfiguration": "development",
-      "dependsOn": ["build"],
       "options": {
-        "buildTarget": "turkey-timer-24:build",
-        "runBuildTargetDependencies": false
+        "buildTarget": "turkey-timer-24:build"
       },
       "configurations": {
         "development": {
-          "buildTarget": "turkey-timer-24:build:development"
+          "buildTarget": "turkey-timer-24:build:development",
+          "runBuildTargetDependencies": true
         },
         "production": {
           "buildTarget": "turkey-timer-24:build:production"
         }
       }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
+    "format": {
+      "executor": "@nx/prettier:format"
     }
   }
 }
