@@ -1,5 +1,6 @@
 link(rel='stylesheet' href="hero.css")
 
+include head
 #hero
     .hero-row
         .hero-letter.init.flicker.delay-animation.glow.left T
@@ -14,8 +15,19 @@ link(rel='stylesheet' href="hero.css")
         .hero-letter.init.flicker.delay-animation.glow.bottom M
         .hero-letter.init.flicker.delay-animation.glow.bottom E
         .hero-letter.init.flicker.delay-animation.glow.right R
+    #screen-transition-overlay
     .hero-row#controls 
-        button.waffle-button(hidden)
+        button.waffle-button(hidden)#enter-button
             h3 ENTER
 
+
 script(src="hero.js" type="module")
+
+script.
+    const enterButton = document.getElementById('enter-button');
+
+    enterButton.addEventListener('click', () => {
+        console.log('click');
+        const overlay = document.getElementById('screen-transition-overlay');
+        overlay.classList.add('fade-in');
+    })

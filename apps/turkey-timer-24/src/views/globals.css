@@ -103,7 +103,7 @@ html {
   --tt-font-face-body: 'Public Sans';
 
   --tt-font-weight-light: 300;
-  --tt-font-weight-regular: 400;
+  --tt-font-weight-regular: 40c0;
   --tt-font-weight-bold: 700;
   --tt-font-weight-black: 900;
 
@@ -113,7 +113,7 @@ html {
 
 body {
   height: 100%;
-  background-color: var(--tt-black);
+  background-color: var(--tt-light-yellow);
 }
 
 h1,
@@ -150,13 +150,9 @@ h6 {
   font-size: var(--tt-font-size-small);
 }
 
-button.waffle-button{
-    background-color: var(--tt-yellow);
-    border: solid var(--tt-black);
-    cursor: pointer;
-    border-radius: var(--tt-layout-medium);
+button.waffle-button {
+  background-color: var(--tt-yellow);
+  border: solid var(--tt-black);
+  cursor: pointer;
+  border-radius: var(--tt-layout-medium);
 }
-/* 
-.hidden{
-    display: 
-} */

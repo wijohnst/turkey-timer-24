@@ -1,5 +1,7 @@
 #hero {
   padding: 2rem;
+  height: 100%;
+  background-color: var(--tt-black);
 
   .hero-row {
     display: flex;
@@ -71,6 +73,44 @@
     margin-top: var(--tt-layout-large);
   }
 
+  #screen-transition-overlay{
+    position: fixed;
+    background-color: var(--tt-light-yellow);
+    top: 0;
+    left: 0;
+  }
+
+  .fade-in{
+    animation-name: fadeIn;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+
+  .overlay-final{
+    position: fixed;
+    background-color: var(--tt-light-yellow);
+    height: 100%;
+    width: 100%;
+    z-index: 1000;
+    opacity: 1;
+  }
+
+}
+
+@keyframes fadeIn {
+    0% {
+       z-index: 1000;
+       height: 100%;
+       width: 100%;
+       opacity: 0;
+    }
+    90% {
+        z-index: 1000;
+        height: 100%;
+        width: 100%;
+        opacity: 1;
+    }
 }
 
 @keyframes flicker {

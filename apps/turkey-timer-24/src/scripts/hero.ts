@@ -1,9 +1,8 @@
 export const init = () => {
   console.log('Handling hero section');
 
-  document.addEventListener('animationend', () => {
+  document.addEventListener('animationend', (event: AnimationEvent) => {
     const initElements = document.querySelectorAll('.hero-letter.init');
-    console.log(initElements);
 
     initElements.forEach((element) => {
       element.classList.remove('init');
@@ -18,6 +17,17 @@ export const init = () => {
       hiddenButton.removeAttribute('hidden');
       hiddenButton.classList.add('flicker');
       hiddenButton.classList.add('glow');
+    }
+
+    if (event.animationName === 'fadeIn') {
+      const overlay = document.getElementById('screen-transition-overlay');
+
+      overlay.classList.remove('fade-in');
+      overlay.classList.add('overlay-final');
+
+      window.setInterval(() => {
+        window.htmx.ajax('get', '/home', null);
+      }, 3000);
     }
   });
 };
