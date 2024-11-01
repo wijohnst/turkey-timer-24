@@ -1,3 +1,7 @@
+#header {
+    opacity: 0;
+}
+
 body {
   display: flex;
   flex-flow: column;

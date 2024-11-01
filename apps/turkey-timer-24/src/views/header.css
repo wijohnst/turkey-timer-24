@@ -1,0 +1,16 @@
+.waffle-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: solid var(--tt-black);
+    box-shadow: 3px 3px 0 var(--tt-black);
+    
+    background-color: var(--tt-yellow);
+
+    h2 {
+        letter-spacing: 2rem;
+        word-break: break-word;
+        text-align: center;
+    }
+}

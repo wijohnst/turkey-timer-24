@@ -3,18 +3,18 @@ link(rel='stylesheet' href="hero.css")
 include head
 #hero
     .hero-row
-        .hero-letter.init.flicker.delay-animation.glow.left T
-        .hero-letter.init.flicker.delay-animation.glow.top U
-        .hero-letter.init.flicker.delay-animation.glow.top R
-        .hero-letter.init.flicker.delay-animation.glow.top K
-        .hero-letter.init.flicker.delay-animation.glow.top E
-        .hero-letter.init.flicker.delay-animation.glow.right Y
+        .hero-letter.init.flicker-on.delay-animation.glow.left T
+        .hero-letter.init.flicker-on.delay-animation.glow.top U
+        .hero-letter.init.flicker-on.delay-animation.glow.top R
+        .hero-letter.init.flicker-on.delay-animation.glow.top K
+        .hero-letter.init.flicker-on.delay-animation.glow.top E
+        .hero-letter.init.flicker-on.delay-animation.glow.right Y
     .hero-row
-        .hero-letter.init.flicker.delay-animation.glow.left T
-        .hero-letter.init.flicker.delay-animation.glow.bottom I
-        .hero-letter.init.flicker.delay-animation.glow.bottom M
-        .hero-letter.init.flicker.delay-animation.glow.bottom E
-        .hero-letter.init.flicker.delay-animation.glow.right R
+        .hero-letter.init.flicker-on.delay-animation.glow.left T
+        .hero-letter.init.flicker-on.delay-animation.glow.bottom I
+        .hero-letter.init.flicker-on.delay-animation.glow.bottom M
+        .hero-letter.init.flicker-on.delay-animation.glow.bottom E
+        .hero-letter.init.flicker-on.delay-animation.glow.right R
     #screen-transition-overlay
     .hero-row#controls 
         button.waffle-button(hidden)#enter-button
@@ -30,4 +30,5 @@ script.
         console.log('click');
         const overlay = document.getElementById('screen-transition-overlay');
         overlay.classList.add('fade-in');
+        overlay.classList.add('overlay-final');
     })

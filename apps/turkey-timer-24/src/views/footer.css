@@ -1,0 +1,7 @@
+.waffle-footer{
+    text-align: center;
+     
+     span {
+        font-size: var(--tt-font-size-small);
+     }
+}

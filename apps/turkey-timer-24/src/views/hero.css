@@ -61,8 +61,13 @@
     left: 0;
 }
 
-  .flicker {
+  .flicker-on {
     animation: flicker 4s;
+    animation-fill-mode: forwards;
+  }
+
+  .flicker-off{
+    animation: flicker 2s;
   }
 
   .delay-animation{
