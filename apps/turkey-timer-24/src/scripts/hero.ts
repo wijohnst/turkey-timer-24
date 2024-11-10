@@ -28,7 +28,6 @@ export const init = () => {
 
     if (event.animationName === 'fadeIn') {
       const overlay = document.getElementById('screen-transition-overlay');
-      const body = document.querySelector('body');
 
       overlay.classList.remove('fade-in');
 

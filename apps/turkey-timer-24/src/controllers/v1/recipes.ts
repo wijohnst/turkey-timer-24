@@ -112,7 +112,7 @@ const recipeArr: Recipe[] = [
 const totalRecipes = recipeArr.length;
 const totalPages = Math.ceil(totalRecipes / 3);
 
-export const getRecipes = (paginationNumber: number = 0): Recipe[] => {
+export const getRecipes = (paginationNumber = 0): Recipe[] => {
   const offset = paginationNumber + 3;
   return recipeArr.slice(paginationNumber, offset);
 };
