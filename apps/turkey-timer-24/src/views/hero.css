@@ -80,7 +80,7 @@
 
   #screen-transition-overlay{
     position: fixed;
-    background-color: var(--tt-light-yellow);
+    background: linear-gradient(180deg, var(--tt-light-yellow) 0%, var(--tt-white) 35.5%);
     top: 0;
     left: 0;
   }

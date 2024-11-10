@@ -35,6 +35,10 @@ select {
   font: inherit;
 }
 
+button {
+    cursor: pointer;
+}
+
 /* 7. Avoid text overflows */
 p,
 h1,
@@ -85,6 +89,7 @@ html {
   --tt-white: #ffffff;
   --tt-tan: #faf1e1;
   --tt-light-yellow: #fef882;
+  --tt-light-gray: #dcdcdc;
 
   /*LAYOUT SIZES*/
   --tt-layout-x-small: 0.125rem /* 2px */;
@@ -113,7 +118,7 @@ html {
 
 body {
   height: 100%;
-  background-color: var(--tt-light-yellow);
+  background: linear-gradient(180deg, var(--tt-light-yellow) 0%, var(--tt-white) 50%);
 }
 
 h1,

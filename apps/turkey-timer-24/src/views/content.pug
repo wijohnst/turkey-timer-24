@@ -1,0 +1,13 @@
+link(rel="stylesheet" href="content.css")
+link(rel="stylesheet" href="recipes.css")
+
+#content 
+    #controls 
+        button(
+            hx-get="/menu"
+            hx-target="#content"
+            hx-trigger="click"
+            hx-swap="outerHTML"
+        ) 
+            span x
+    block page-content

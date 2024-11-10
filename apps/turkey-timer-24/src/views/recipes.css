@@ -1,0 +1,26 @@
+#recipes{
+    #controls{
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        justify-content: center;
+        gap: var(--tt-layout-medium);
+    }
+}
+
+#tickets{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    gap: var(--tt-layout-medium);
+}
+
+@media screen and (width <= 1000px){
+    #tickets{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}

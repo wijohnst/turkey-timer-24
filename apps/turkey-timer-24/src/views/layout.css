@@ -16,6 +16,8 @@ body > div {
 #main-content {
   flex-grow: 1;
   width: 100%;
+
+  overflow: scroll;
 }
 
 #footer {

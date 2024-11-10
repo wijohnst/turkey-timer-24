@@ -1,0 +1,223 @@
+.recipe {
+    width: clamp(300px, 75%, 400px);
+    height: 600px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+    padding: var(--tt-layout-large);
+    background-color: var(--tt-light-yellow);
+
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+span.hand{
+    color: var(--tt-red);
+    font-family: 'Just Another Hand', cursive;
+    font-style: normal;
+    font-size: 1.5rem;
+}
+
+.recipe-header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 75%;
+    padding: var(--tt-layout-medium);
+
+    h3 {
+        font-size: var(--tt-font-size-medium);
+        margin: 0;
+        text-align: center;
+    }
+
+    .recipe-meta{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        width: 100%;
+    }
+
+    .meta-item {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+
+        width: 100%;
+    }
+
+    .meta-value-container {
+        width: 100px;
+        
+        padding-left: var(--tt-layout-medium);
+        border-bottom: 1px solid var(--tt-black);
+    }
+}
+
+.recipe-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+
+    width: 100%;
+}
+
+.ingredients {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto;
+    width: 100%;
+
+    border: solid thin var(--tt-black);
+    
+    .grid-item{
+        border: solid thin var(--tt-black);
+        height: 75 px;
+
+        padding: var(--tt-layout-medium);
+    }
+
+    .ingredient-name{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        span {
+            font-size: var(--tt-font-size-small);
+            text-transform: uppercase;
+        }
+    }
+
+    .number-box {
+        display: flex;
+        justify-content: flex-end;
+        padding: var(--tt-layout-small);
+
+        font-size: var(--tt-font-size-small);
+        color: var(--tt-light-gray);
+        position: relative;
+    }
+
+    .quantity {
+        position: absolute;
+        top: var(--tt-layout-small);
+
+        transform: rotate(8deg);
+
+        span {
+            font-size: 2rem;
+        }
+    }
+
+    
+}
+
+.instructions {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start ;
+    align-items: center;
+    width: 100%;
+    flex-grow: 1;
+
+    padding: var(--tt-layout-small);
+
+    
+    border: solid var(--tt-layout-x-small) var(--tt-black);
+    border-top: none;
+
+    .instructions-header{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        width: 100%;
+    }
+
+    .meta{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        h4{
+            font-size: 0.5rem;
+            text-align: center;
+        }
+    }
+
+    .serial-stamp-container{
+        font-family: monospace;
+        color: var(--tt-red);
+        width: 100%;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-grow: 1;
+
+        span{
+            opacity: 50%;
+        }
+    }
+
+    ul.instruction-list{
+        list-style-type: none;
+        margin: 0;
+        padding-left: var(--tt-layout-medium);
+        width: 100%;
+
+        transform: rotate(-2deg);
+    }
+
+    ul.instruction-list li:nth-child(2){
+        transform: rotate(-1deg);
+    }
+
+    ul.instruction-list li:nth-child(3){
+        transform: rotate(2deg);
+    }
+
+    ul.instruction-list li:nth-child(3n+4){
+        padding-left: var(--tt-layout-large);
+    }
+}
+
+.swoosh{
+    animation: swoosh 1s;
+}
+
+.in{
+    animation-direction: reverse;
+    animation-timing-function: ease-in;
+}
+
+.out{
+    animation: swoosh 1s ease-in-out;
+}
+
+
+@keyframes swoosh {
+    0%{
+        transform: translateX(0);
+    }
+     
+    100%{
+        transform: translateX(-500%);
+    }
+    
+}

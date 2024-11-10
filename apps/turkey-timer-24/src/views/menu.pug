@@ -1,0 +1,34 @@
+link(rel='stylesheet' href='menu.css') 
+
+
+nav.waffle-menu
+    button(
+        hx-get="/recipes" 
+        hx-target="#dynamic-content" 
+        hx-swap="innerHTML transition:true"
+        ).nav-button
+        h3 Recipes
+    button(
+        hx-get="/about" 
+        hx-target="#dynamic-content" 
+        hx-swap="innerHTML transition:true"
+    ).nav-button
+        h3 About 
+    button(
+        hx-get="/plan" 
+        hx-target="#dynamic-content" 
+        hx-swap="innerHTML transition:true"
+    ).nav-button
+        h3 Plan
+
+script.
+    var navButtons = document.querySelectorAll('.nav-button')
+    navButtons.forEach((button) => {
+        button.addEventListener('mouseenter', () => {
+            button.classList.add('pulse')
+        })
+
+        button.addEventListener('mouseleave', () => {
+            button.classList.remove('pulse')
+        })
+    })

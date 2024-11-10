@@ -28,6 +28,11 @@
             "glob": "**/*.css",
             "input": "apps/turkey-timer-24/src/views",
             "output": "static"
+          },
+          {
+            "glob": "**/*.svg",
+            "input": "apps/turkey-timer-24/src/assets",
+            "output": "static"
           }
         ],
         "generatePackageJson": true,
@@ -86,7 +91,9 @@
       "executor": "@nx/js:node",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "turkey-timer-24:build"
+        "buildTarget": "turkey-timer-24:build",
+        "host": "0.0.0.0",
+        "port": 4200
       },
       "configurations": {
         "development": {

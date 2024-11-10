@@ -1,0 +1,37 @@
+link(rel="stylesheet" href="pagination-controls.css")
+
+#pagination-controls 
+    button(
+        hx-get=`/recipes?pageNumber=${pageNumber - 3}`
+        hx-target='#content'
+        hx-swap='outerHTML transition:true'
+        disabled=pageNumber === 0 
+    ).pag-button#back
+        img(src="caret-icon.svg" id="forward")
+    ul#dots 
+        each li,index in Array(totalPages)
+            li.dot  
+                img(src="dot-icon.svg" class=(dotIndex === index) ? "active" : ''  )
+    button(
+        hx-get=`/recipes?pageNumber=${pageNumber + 3}`
+        hx-target='#content'
+        hx-swap='outerHTML transition:true'
+    ).pag-button#forward
+        img(src="caret-icon.svg" id="back")
+
+script.
+    console.log('pagination-controls.js loaded') 
+
+    var paginationButtons = document.querySelectorAll('.pag-button')
+    var recipes = document.querySelectorAll('.recipe')
+
+    paginationButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            console.log(recipes)
+            recipes.forEach(recipe => {
+                recipe.classList.remove('in')
+                recipe.classList.remove('swoosh')
+                recipe.classList.add('out')
+            })
+        })
+    })

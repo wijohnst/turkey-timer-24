@@ -1,0 +1,48 @@
+link(rel="stylesheet" href="/recipe.css")
+
+mixin ingredient(name, quantity, unit)
+    .grid-item.ingredient-name
+        span #{name}
+    .grid-item.number-box
+        span 1
+        .quantity
+            span.hand #{quantity} #{unit}
+    .grid-item.number-box
+        span 2
+    .grid-item.number-box
+        span 3
+    .grid-item.number-box
+        span 4
+
+.recipe.swoosh.in
+    .recipe-header
+        h3.recipe-title #{recipe.name}
+        .recipe-meta
+            .meta-item
+                label.meta-label Lead
+                .meta-value-container 
+                    span.hand  t - #{recipe.leadTime}
+            .meta-item
+                label.meta-label Prep
+                .meta-value-container 
+                    span.hand t - #{recipe.prepTime}
+    .recipe-content
+        .ingredients 
+            each ingredient in recipe.ingredients
+                +ingredient(ingredient.name, ingredient.quantity, ingredient.unit)
+        .instructions 
+            .instructions-header 
+                .meta
+                    h4 to prepare 
+                .serial-stamp-container
+                    span.stamp #{recipe.ticketNumber}
+            ul.instruction-list 
+                li 
+                    span.hand - Combine eggs through milk
+                li 
+                    span.hand - Mix
+                li
+                    span.hand - Cook on medium heat, folding eggs as they set 
+                li 
+                    span.hand -  Season to taste
+

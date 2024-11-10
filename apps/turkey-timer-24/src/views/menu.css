@@ -1,0 +1,21 @@
+.waffle-menu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+
+    width: 100%;
+    height: clamp(200px, 75%, 600px);
+
+    padding: 2rem;
+
+    h3 {
+        text-transform: none;
+    }
+
+    button.nav-button {
+        text-decoration: none;
+        background-color: unset;
+        border: none;
+    }
+}

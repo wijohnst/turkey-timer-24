@@ -1,0 +1,27 @@
+#content{
+    height: 100%;
+    padding: var(--tt-layout-large);
+    
+    display: flex;
+    flex-direction: column;
+}
+
+#controls {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+
+    padding: var(--tt-layout-large) 0 0 0;
+
+    button {
+        text-decoration: none;
+        border: none;
+        background-color: unset;
+    
+        span {
+            font-size: var(--tt-font-size-large);
+            font-weight: bold;
+        }
+    }
+}
+

@@ -1,0 +1,11 @@
+extends content.pug
+
+block page-content
+    #recipes
+        #rail-lower 
+        #rail-upper
+        #tickets
+            each recipe in recipes
+                include recipe.pug
+        #controls
+            include pagination-controls
