@@ -1,0 +1,7 @@
+name: Turkey Timer 24
+services:
+  - name: Turkey Timer 24
+    envs:
+    github:
+      branch: main
+      repo: wijohnst/turkey-timer-24
