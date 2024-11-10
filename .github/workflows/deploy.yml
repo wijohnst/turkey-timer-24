@@ -14,19 +14,28 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
       - name: Log in to the Container registry
         uses: docker/login-action@v3.3.0
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-      - name: Build and push Docker image
-        id: push
-        uses: docker/build-push-action@v6.5.0
-        with:
-          context: .
-          push: true
-          tags: ghcr.io/${{ github.repository }}:latest
+
+      - name: Build Docker image for the app
+        run: |
+          nx docker-build turkey-timer-24
+          docker tag turkey-timer-24 registry.digitalocean.com/firt-project/turkey-timer-24:latest  
+          docker push registry.digitalocean.com/first-project/turkey-timer-24:latest
+
+      #   - name: Build and push Docker image
+      #     id: push
+      #     uses: docker/build-push-action@v6.5.0
+      #     with:
+      #       context: .
+      #       push: true
+      #       tags: ghcr.io/${{ github.repository }}:latest
+
       - name: Deploy the app
         uses: digitalocean/app_action/deploy@v2
         env:
