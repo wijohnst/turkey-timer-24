@@ -24,6 +24,7 @@ jobs:
 
       - name: Build Docker image for the app
         run: |
+          npm install
           npx nx docker-build turkey-timer-24
         #   npx docker tag turkey-timer-24 registry.digitalocean.com/turkey-timer/turkey-timer-24:latest
         #   npx docker push registry.digitalocean.com/turkey-timer/turkey-timer-24:latest
