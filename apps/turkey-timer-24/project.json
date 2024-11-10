@@ -110,6 +110,10 @@
     },
     "format": {
       "executor": "@nx/prettier:format"
+    },
+    "docker-build": {
+      "dependsOn": ["build"],
+      "command": "DOCKER_BUILDKIT=1 docker build -f apps/turkey-timer-24/Dockerfile -t turkey-timer-24 ."
     }
   }
 }
