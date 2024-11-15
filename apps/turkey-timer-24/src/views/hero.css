@@ -129,9 +129,16 @@
         font-size: var(--tt-font-size-large);
         border-width: calc(var(--tt-layout-x-small) / 1.25);
     }
-  }
 
-    
+    .glow:after {
+        content: '';
+        width: inherit;
+        height: inherit;
+        position: absolute;
+        background: unset;
+        filter: unset;
+    }
+  }
 }
 
 @keyframes flicker {

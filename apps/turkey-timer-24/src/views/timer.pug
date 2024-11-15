@@ -3,7 +3,7 @@ link(rel='stylesheet' href="/timer.css")
 #timer(
     hx-get="/timer"
     hx-trigger=isUnder2Minutes ? 'every 1s' : 'every 1m'
-    hx-swap="outerHTML"
+    hx-swap="outerHTML transition:false"
     hx-target="#timer"
 )
     .unit-group

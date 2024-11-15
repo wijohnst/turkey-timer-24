@@ -15,7 +15,7 @@ type Recipe = {
   ingredients: Ingredient[];
 };
 
-const recipeArr: Recipe[] = [
+export const recipeArr: Recipe[] = [
   {
     name: 'Roast Turkey',
     leadTime: '3 hours',

@@ -37,6 +37,7 @@ select {
 
 button {
     cursor: pointer;
+    color: var(--tt-black);
 }
 
 /* 7. Avoid text overflows */
