@@ -59,3 +59,19 @@
         text-transform: uppercase;
     }
 }
+
+@media screen and (max-width: 768px){
+    #timer{
+        padding: var(--tt-layout-medium);
+    }
+
+    .digit{
+        width: 2.5rem;
+    }
+
+    .unit{
+        span{
+            font-size: var(--tt-font-size-medium);
+        }
+    }
+}

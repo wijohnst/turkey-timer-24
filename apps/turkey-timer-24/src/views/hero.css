@@ -118,6 +118,22 @@
     }
 }
 
+@media screen and (max-width: 390px) {
+  #hero {
+    padding: 1rem;
+
+    .hero-letter {
+        height: 3rem;
+        width: 3rem;
+
+        font-size: var(--tt-font-size-large);
+        border-width: calc(var(--tt-layout-x-small) / 1.25);
+    }
+  }
+
+    
+}
+
 @keyframes flicker {
   0% {
     filter: brightness(15%);

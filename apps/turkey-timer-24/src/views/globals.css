@@ -155,6 +155,33 @@ h6 {
   font-size: var(--tt-font-size-small);
 }
 
+@media screen and (max-width: 390px) {
+  h1 {
+    font-size: var(--tt-font-size-xx-large);
+  }
+
+  h2 {
+    font-size: var(--tt-font-size-x-large);
+  }
+
+  h3 {
+    font-size: var(--tt-font-size-large);
+  }
+
+  h4 {
+    font-size: var(--tt-font-size-regular);
+  }
+
+  h5 {
+    font-size: var(--tt-font-size-small);
+  }
+
+  h6 {
+    font-size: var(--tt-font-size-small);
+  }
+    
+}
+
 button.waffle-button {
   background-color: var(--tt-yellow);
   border: solid var(--tt-black);
