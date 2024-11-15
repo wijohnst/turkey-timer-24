@@ -1,0 +1,26 @@
+#about{
+
+    flex-direction: column;
+
+    p {
+        width: clamp(300px, 50%, 800px);
+
+        line-height: 1.5;
+
+        margin: 0 0 1rem 0;
+    }
+
+    p.quote {
+        margin: .25rem 1rem 1.25rem 2rem;
+        padding-left: 1rem;
+
+        border-left: solid 2px var(--tt-black);
+        font-size: var(--tt-font-size-large);
+        font-weight: var(--tt-font-weight-bold);
+    }
+
+    p.signature {
+        margin: unset;
+        font-style: italic;
+    }
+}

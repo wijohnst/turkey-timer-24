@@ -176,3 +176,9 @@ button.waffle-button {
     }
 }
 
+/* SEMANTIC TOKENS */
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

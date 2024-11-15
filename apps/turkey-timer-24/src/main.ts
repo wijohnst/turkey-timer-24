@@ -3,7 +3,7 @@ import views from '@ladjs/koa-views';
 import serve from '@ladjs/koa-better-static';
 import { router } from './routes';
 
-const host = process.env.HOST ?? '0.0.0.0';
+const host = process.env.HOST || '0.0.0.0';
 const port = process.env.PORT ? Number(process.env.PORT) : 3000;
 
 const viewsPath = __dirname + '/views';
