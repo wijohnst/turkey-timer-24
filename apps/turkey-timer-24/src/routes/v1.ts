@@ -32,6 +32,6 @@ router.get('/timer', async (ctx) => {
   await v1.timer(ctx);
 });
 
-router.get('/social-preview', async (ctx) => {
+router.get('/social-preview.png', async (ctx) => {
   await v1.socialPreview(ctx);
 });
