@@ -1,10 +1,12 @@
 #timeline{
+    padding: var(--tt-layout-large) 0 0 0;
     display: grid;
     grid-template-rows: 1fr 1fr;
+    align-self: center;
 
     width: 100%;
-
-    overflow-x: scroll;
+    
+    overflow: scroll;
 }
 
 #details{
@@ -30,6 +32,8 @@
 
         padding: var(--tt-layout-small);
         text-align: center;
+        width: 90%;
+        margin: var(--tt-layout-x-small);
 
         span {
             font-size: var(--tt-font-size-small);
@@ -49,7 +53,7 @@
         flex-flow: row-reverse nowrap;
         align-items: center;
         justify-content: center;
-
+        height: fit-content;
         width: 100px;
     }
 
@@ -62,7 +66,7 @@
             width: 2rem;
         }
     }
-
+    
     .half-hour{
         filter: brightness(0.85);
     }
@@ -73,5 +77,6 @@
         top: -62%;
         left: 50%;
         font-weight: var(--tt-font-weight-black);
+        z-index: -99;
     }
 }

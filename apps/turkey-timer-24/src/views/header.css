@@ -15,9 +15,8 @@
     }
 }
 
-@media screen and (max-width: 390px){
+@media screen and (max-width: 768px){
     .waffle-header{
-
         h2{
             letter-spacing: .5rem;
             font-size: var(--tt-font-size-large);

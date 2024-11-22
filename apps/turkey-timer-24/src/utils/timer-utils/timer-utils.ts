@@ -1,6 +1,6 @@
 import { intervalToDuration, Duration, differenceInMinutes } from 'date-fns';
 
-export const tTime = new Date('2024-11-28T14:00:00');
+export const tTime = new Date('2024-11-28T17:00:00');
 
 export type TMinusTime = {
   days: [string, string];

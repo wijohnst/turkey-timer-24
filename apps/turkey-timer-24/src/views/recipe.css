@@ -16,7 +16,7 @@
     overflow-y: auto;
 }
 
-span.hand{
+span.hand {
     color: var(--tt-red);
     font-family: 'Just Another Hand', cursive;
     font-style: normal;
@@ -38,6 +38,10 @@ span.hand{
         text-align: center;
     }
 
+    label {
+        font-size: var(--tt-font-size-small);
+    }
+
     .recipe-meta{
         display: flex;
         flex-direction: row;
@@ -51,7 +55,7 @@ span.hand{
         display: flex;
         flex-direction: row;
         justify-content: center;
-        align-items: flex-start;
+        align-items: center;
 
         width: 100%;
     }
@@ -61,6 +65,7 @@ span.hand{
         
         padding-left: var(--tt-layout-medium);
         border-bottom: 1px solid var(--tt-black);
+        text-align: center;
     }
 }
 
@@ -97,6 +102,7 @@ span.hand{
         span {
             font-size: var(--tt-font-size-small);
             text-transform: uppercase;
+            text-align: center;
         }
     }
 
@@ -112,12 +118,12 @@ span.hand{
 
     .quantity {
         position: absolute;
-        top: var(--tt-layout-small);
-
-        transform: rotate(8deg);
+        top: 25%;
+        left: 40%; 
 
         span {
-            font-size: 2rem;
+            font-size: 1.25rem;
+            text-align: center;
         }
     }
 
@@ -154,7 +160,7 @@ span.hand{
         align-items: center;
 
         h4{
-            font-size: 0.5rem;
+            font-size: 1rem;
             text-align: center;
         }
     }
@@ -180,20 +186,19 @@ span.hand{
         margin: 0;
         padding-left: var(--tt-layout-medium);
         width: 100%;
+        max-height: 400px;
+        overflow-y: scroll;
 
-        transform: rotate(-2deg);
-    }
+        li {
+            margin-bottom: var(--tt-layout-small);
+        }
+        
+        span.hand {
+            color: var(--tt-black);
+            line-height: .75;
+        }
 
-    ul.instruction-list li:nth-child(2){
-        transform: rotate(-1deg);
-    }
 
-    ul.instruction-list li:nth-child(3){
-        transform: rotate(2deg);
-    }
-
-    ul.instruction-list li:nth-child(3n+4){
-        padding-left: var(--tt-layout-large);
     }
 }
 
@@ -218,6 +223,28 @@ span.hand{
      
     100%{
         transform: translateX(-500%);
+    }
+    
+}
+
+@media screen and (max-width: 425px) {
+    .ingredients{
+        .grid-item.ingredient-name {
+            span {
+                font-size: var(--tt-font-size-small);
+            }
+        }
+    }
+    span.hand {
+        font-size: 1.25rem;
+    }
+
+    .recipe-header{
+        width: 100%;
+        
+        .recipe-meta{
+            flex-direction: column;
+        }
     }
     
 }

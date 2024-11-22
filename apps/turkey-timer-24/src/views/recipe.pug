@@ -14,6 +14,10 @@ mixin ingredient(name, quantity, unit)
     .grid-item.number-box
         span 4
 
+mixin instruction(instruction)
+    li 
+        span.hand - #{instruction}
+
 .recipe.swoosh.in
     .recipe-header
         h3.recipe-title #{recipe.name}
@@ -26,6 +30,10 @@ mixin ingredient(name, quantity, unit)
                 label.meta-label Prep
                 .meta-value-container 
                     span.hand t - #{recipe.prepTime}
+            .meta-item 
+                label.meta-label Cook
+                .meta-value-container 
+                    span.hand t - #{recipe.cookTime}
     .recipe-content
         .ingredients 
             each ingredient in recipe.ingredients
@@ -37,12 +45,6 @@ mixin ingredient(name, quantity, unit)
                 .serial-stamp-container
                     span.stamp #{recipe.ticketNumber}
             ul.instruction-list 
-                li 
-                    span.hand - Combine eggs through milk
-                li 
-                    span.hand - Mix
-                li
-                    span.hand - Cook on medium heat, folding eggs as they set 
-                li 
-                    span.hand -  Season to taste
+                each instruction in recipe.instructions
+                    +instruction(instruction)
 

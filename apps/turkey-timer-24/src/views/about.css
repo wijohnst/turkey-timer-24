@@ -3,9 +3,10 @@
     flex-direction: column;
 
     p {
-        width: clamp(300px, 50%, 800px);
+        width: clamp(325px, 50%, 800px);
 
         line-height: 1.5;
+        text-align: justify;
 
         margin: 0 0 1rem 0;
     }
@@ -22,5 +23,17 @@
     p.signature {
         margin: unset;
         font-style: italic;
+    }
+
+    @media screen and (max-width: 768px){
+        p {
+            line-height: 1.5 ;
+        }
+
+        p.quote {
+            margin: .25rem 0 1.25rem 0;
+            
+            font-size: inherit;
+        }
     }
 }
