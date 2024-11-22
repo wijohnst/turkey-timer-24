@@ -33,6 +33,11 @@
             "glob": "**/*.svg",
             "input": "apps/turkey-timer-24/src/assets",
             "output": "static"
+          },
+          {
+            "glob": "**/*.png",
+            "input": "apps/turkey-timer-24/src/assets",
+            "output": "static"
           }
         ],
         "generatePackageJson": true,
