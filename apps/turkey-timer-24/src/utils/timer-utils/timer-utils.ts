@@ -1,5 +1,7 @@
 import { intervalToDuration, Duration, differenceInMinutes } from 'date-fns';
+import { toZonedTime } from 'date-fns-tz';
 
+// convert to PST
 export const tTime = new Date('2024-11-28T17:00:00');
 
 export type TMinusTime = {
@@ -26,7 +28,10 @@ export const formatDuration = (duration: Duration): TMinusTime => {
 };
 
 export const getTMinusTime = (): GetTMinusTimeResponse => {
-  const now = new Date();
+  // now should be current time + 8 hours
+
+  const now = toZonedTime(new Date(), 'America/Los_Angeles');
+
   const shouldIncludeSeconds = isUnder2Minutes(now);
 
   const res = formatDuration(
@@ -43,5 +48,7 @@ export const getTMinusTime = (): GetTMinusTimeResponse => {
 };
 
 export const isUnder2Minutes = (now = new Date()): boolean => {
-  return differenceInMinutes(tTime, now) <= 2;
+  return (
+    differenceInMinutes(tTime, now) <= 2 && differenceInMinutes(tTime, now) >= 0
+  );
 };

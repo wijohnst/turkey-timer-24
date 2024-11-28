@@ -59,7 +59,7 @@ export const briocheChestnutStuffing: Recipe = {
     },
     {
       name: 'Fennel, diced',
-      quantity: '1/2',
+      quantity: '1 C.',
     },
     {
       name: 'Kosher salt',
