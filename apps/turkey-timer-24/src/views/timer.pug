@@ -1,49 +1,81 @@
 link(rel='stylesheet' href="/timer.css")
 
-#timer(
-    hx-get="/timer"
-    hx-trigger=isUnder2Minutes ? 'every 1s' : 'every 1m'
-    hx-swap="outerHTML transition:false"
-    hx-target="#timer"
-)
-    .unit-group
-        .digit-group
-            .digit 
-                h1 #{tMinusTime.days[0]}
-            .digit
-                h1 #{tMinusTime.days[1]}
-            .colon 
-                h1 :
-        .unit
-            span Days
-    .unit-group
-        .digit-group
-            .digit 
-                h1 #{tMinusTime.hours[0]} 
-            .digit
-                h1 #{tMinusTime.hours[1]}
-            .colon 
-                h1 :
-        .unit
-            span Hours
-    .unit-group
-        .digit-group
-            .digit 
-                h1 #{tMinusTime.minutes[0]}
-            .digit
-                h1 #{tMinusTime.minutes[1]}
-            if tMinusTime.seconds
-                .colon 
+if(isOver30Days === true)
+    #timer 
+        .unit-group
+            .digit-group 
+                .digit 
+                    h1 0
+                .digit 
+                    h1 0
+                .colon  
                     h1 :
-        .unit
-            span Mins.
-    if tMinusTime.seconds
+            .unit 
+                span Days
+        .unit-group
+            .digit-group 
+                .digit 
+                    h1 0
+                .digit 
+                    h1 0
+                .colon  
+                    h1 :
+            .unit   
+                span Hours
+        .unit-group
+            .digit-group 
+                .digit 
+                    h1 0
+                .digit 
+                    h1 0
+            .unit   
+                span Mins.
+    #message 
+        span SEE YOU NEXT YEAR!
+else
+    #timer(
+        hx-get="/timer"
+        hx-trigger=isUnder2Minutes ? 'every 1s' : 'every 1m'
+        hx-swap="outerHTML transition:false"
+        hx-target="#timer"
+    )
         .unit-group
             .digit-group
                 .digit 
-                    h1 #{tMinusTime.seconds[0]}
+                    h1 #{tMinusTime.days[0]}
                 .digit
-                    h1 #{tMinusTime.seconds[1]}
+                    h1 #{tMinusTime.days[1]}
+                .colon 
+                    h1 :
             .unit
-                span Secs.
-
+                span Days
+        .unit-group
+            .digit-group
+                .digit 
+                    h1 #{tMinusTime.hours[0]} 
+                .digit
+                    h1 #{tMinusTime.hours[1]}
+                .colon 
+                    h1 :
+            .unit
+                span Hours
+        .unit-group
+            .digit-group
+                .digit 
+                    h1 #{tMinusTime.minutes[0]}
+                .digit
+                    h1 #{tMinusTime.minutes[1]}
+                if tMinusTime.seconds
+                    .colon 
+                        h1 :
+            .unit
+                span Mins.
+        if tMinusTime.seconds
+            .unit-group
+                .digit-group
+                    .digit 
+                        h1 #{tMinusTime.seconds[0]}
+                    .digit
+                        h1 #{tMinusTime.seconds[1]}
+                .unit
+                    span Secs.

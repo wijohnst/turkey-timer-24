@@ -1,17 +1,24 @@
 import { Context } from 'koa';
 
-import { TMinusTime, getTMinusTime } from '../../utils';
+import {
+  TMinusTime,
+  getTMinusTime,
+  IsUnder2Minutes,
+  IsOver30Days,
+} from '../../utils';
 
 export type HomeLocals = {
   tMinusTime: TMinusTime;
-  isUnder2Minutes: boolean;
+  isUnder2Minutes: IsUnder2Minutes;
+  isOver30Days: IsOver30Days;
 };
 
 const getLocals = (): HomeLocals => {
-  const [tMinusTime, isUnder2Minutes] = getTMinusTime();
+  const [tMinusTime, isUnder2Minutes, isOver30Days] = getTMinusTime();
   return {
     tMinusTime,
     isUnder2Minutes,
+    isOver30Days,
   };
 };
 

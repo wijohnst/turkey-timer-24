@@ -2,7 +2,7 @@ import { intervalToDuration, Duration, differenceInMinutes } from 'date-fns';
 import { toZonedTime } from 'date-fns-tz';
 
 // convert to PST
-export const tTime = new Date('2024-11-28T17:00:00');
+export const tTime = new Date('2025-11-27T17:00:00');
 
 export type TMinusTime = {
   days: [string, string];
@@ -11,7 +11,8 @@ export type TMinusTime = {
   seconds?: [string, string];
 };
 export type IsUnder2Minutes = boolean;
-export type GetTMinusTimeResponse = [TMinusTime, IsUnder2Minutes];
+export type IsOver30Days = boolean;
+export type GetTMinusTimeResponse = [TMinusTime, IsUnder2Minutes, IsOver30Days];
 
 export const formatDuration = (duration: Duration): TMinusTime => {
   const keys = ['days', 'hours', 'minutes', 'seconds'];
@@ -44,11 +45,15 @@ export const getTMinusTime = (): GetTMinusTimeResponse => {
     delete res.seconds;
   }
 
-  return [res, shouldIncludeSeconds];
+  return [res, shouldIncludeSeconds, isOver30Days(now)];
 };
 
 export const isUnder2Minutes = (now = new Date()): boolean => {
   return (
     differenceInMinutes(tTime, now) <= 2 && differenceInMinutes(tTime, now) >= 0
   );
+};
+
+export const isOver30Days = (now = new Date()): boolean => {
+  return differenceInMinutes(tTime, now) > 30 * 24 * 60;
 };
